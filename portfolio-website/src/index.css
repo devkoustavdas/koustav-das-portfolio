@@ -1,0 +1,105 @@
+@import "./vars.css";
+@import 'animate.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sourcesans);
+  font-size: 19px;
+  font-weight: 300;
+}
+
+::selection {
+  background-color: var(--colour-tertiary);
+  color: var(--colour-text-secondary);
+}
+
+a {
+  font-weight: 500;
+  color: var(--colour-link);
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: var(--colour-secondary);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--colour-shadow);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--colour-shadow);
+}
+
+body {
+  scroll-behavior: smooth;
+  scroll-margin-top: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+button {
+  border-radius: 6px;
+  padding: 0.5em 1em;
+  margin: 10px;
+  margin-left: 0px;
+  min-width: 15ch;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--colour-secondary);
+  color: var(--colour-text-secondary);
+  cursor: pointer;
+  border: 2px solid transparent;
+  outline: none;
+  transition-duration: 400ms;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  box-shadow: 0 5px 4px var(--colour-shadow);
+}
+
+button:hover {
+  border: 2px solid var(--colour-primary);
+}
+
+button:active {
+  border: 2px solid var(--colour-secondary);
+  background-color: var(--colour-primary);
+  color: var(--colour-link);
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+
+
+
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */

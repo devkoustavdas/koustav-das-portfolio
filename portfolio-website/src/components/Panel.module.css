@@ -1,0 +1,178 @@
+@import "../vars.css";
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.cvPage {
+  margin: 0 auto;
+  text-align: justify;
+  padding: 10px;
+}
+
+.cvSecondaryHeading {
+  position: relative;
+  margin: 1em 0 0;
+  text-transform: uppercase;
+  font-family: var(--font-amiko);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--colour-secondary);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.cvSecondaryHeading::first-letter {
+  font-size: 44px;
+  font-family: var(--font-offside);
+}
+
+.cvGrid {
+  display: table;
+}
+
+.cvGridColumn {
+  display: table-cell;
+}
+
+.cvTimeline {
+  position: relative;
+  margin: 0 0 0 0.5em;
+  padding-left: 1.5em;
+  border-left: solid 2px var(--colour-line);
+}
+
+.cvTimeline:first-of-type {
+  margin-top: 1em;
+}
+
+.cvTimeline:last-of-type {
+  border-left-color: transparent;
+}
+
+.cvTimeline:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -0.5em;
+  display: block;
+  width: 1em;
+  height: 1em;
+  border: solid 2px var(--colour-line);
+  background-color: var(--colour-primary);
+  border-radius: 50%;
+}
+
+.cvTimelineHeading {
+  margin: 0;
+  padding-bottom: 0.5em;
+  line-height: 1em;
+  font-weight: 500;
+  -webkit-transform: translateY(-0.1em);
+  -ms-transform: translateY(-0.1em);
+  transform: translateY(-0.1em);
+}
+
+.cvTimelineHeadingTitle {
+  line-height: 1;
+  color: var(--colour-secondary);
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.cvTimelineHeadingLocation {
+  font-size: 0.9em;
+}
+
+.cvTimelineHeadingLocation::before {
+  content: " - ";
+}
+
+.cvTimelineHeadingDuration {
+  display: block;
+  font-size: 0.8em;
+  color: #6f6f6f;
+  font-family: var(--font-offside);
+}
+
+.cvTimelineDetails {
+  display: block;
+  margin: 0;
+  padding-bottom: 2em;
+  padding: 0 0 2em 1em;
+  list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGElEQVQIW2NkYGD4D8TIgJERTQDMpVAQAGaUAQbko3DsAAAAAElFTkSuQmCC");
+}
+
+.cvJobTimelineItem {
+  margin-bottom: 0.5em;
+}
+
+.cvTimelineResult {
+  color: var(--colour-secondary);
+  font-style: italic;
+  font-weight: 600;
+  float: right;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.cvTimelineResult::before {
+  content: "RESULT:";
+  text-decoration: solid underline 1.5px;
+  text-underline-offset: 4px;
+  margin-right: 10px;
+}
+
+.iconspeaker{
+  background-color: transparent;
+  border: none;
+  transform: scale(2);
+  min-width: 10px;
+  max-width: 32px;
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  box-shadow: none;
+  min-width: none;
+}
+
+.iconspeaker:hover{
+  color: var(--colour-secondary);
+  background-color: transparent;
+  border: none;
+}
+
+.iconspeaker:active{
+  color: var(--colour-secondary);
+  background-color: transparent;
+  border: none;
+}
+
+.speak {
+  display: none;
+}
+
+.pageSubtitle {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.pageSubtitle>div {
+  margin-left: 5px;
+}
+
+@media (max-width: 599px) {
+  .pageSubtitle {
+  display: inline;
+}
+.pageSubtitle>div {
+  margin-left: 5px;
+  display: inline;
+}
+}

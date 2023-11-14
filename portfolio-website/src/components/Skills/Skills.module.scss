@@ -1,0 +1,136 @@
+$border: #1D63FF;
+$border-hover: rgb(71, 71, 71);
+$bg-hover: rgba(0, 0, 0, .1);
+$text: rgb(19, 19, 19);
+$text-hover: rgb(252, 252, 252);
+$bg-hover: #ff9925;
+$ident: 30px;
+$left: -($ident);
+$first: #1D63FF;
+$second: transparent;
+$third: transparent;
+
+.wtree {
+    ol {
+        margin-left: $ident;
+        counter-reset: item;
+    }
+
+    li {
+        list-style-type: none;
+        margin: 10px 0 10px 10px;
+        position: relative;
+
+        &:before {
+            content: "";
+            counter-increment: item;
+            position: absolute;
+            top: -10px;
+            left: $left;
+            border-left: 1px solid $border;
+            border-bottom: 1px solid $border;
+            width: $ident;
+            height: 15px;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            top: 5px;
+            left: $left;
+            border-left: 1px solid $border;
+            border-top: 1px solid $border;
+            border-radius: 0px;
+            width: $ident;
+            height: 100%;
+        }
+
+        &:last-child:after {
+            display: none;
+        }
+
+        span {
+            display: block;
+            border: 1px solid $border;
+            border-radius: 5px;
+            padding: 10px;
+            color: $text;
+            text-decoration: none;
+
+            &:before {
+                content: counters(item, ".") " ";
+            }
+        }
+    }
+}
+
+.wtree {
+    li {
+        span {
+
+            &:hover,
+            &:focus {
+                background-color: $bg-hover;
+                color: $text-hover;
+                border: 1px solid $border-hover;
+                border-radius: 5px;
+
+                &+ol {
+                    li {
+                        span {
+                            background-color: $bg-hover;
+                            color: $text-hover;
+                            border: 1px solid $border-hover;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+
+            &:hover+ol,
+            &:focus+ol {
+                li {
+
+                    &:after,
+                    &:before {
+                        border-color: $border-hover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+li span {
+    background-color: $first
+}
+
+li li span {
+    background-color: $second
+}
+
+li li li span {
+    background-color: $third
+}
+
+.display {
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+input,
+label {
+    margin: 12px 0px 20px 0px;
+}
+
+label {
+    padding-left: 6px;
+    padding-right: 12px;
+}
+
+@media (min-width: 768px) {
+    .wtree {
+        max-width: 70%;
+        margin: 10px auto;
+    }
+}

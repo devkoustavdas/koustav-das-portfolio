@@ -1,0 +1,70 @@
+:root {
+    /* Colours */
+    --colour-text: #121722;
+    --colour-text-secondary: #ffffff;
+    --colour-text-tertiary: rgb(102, 102, 102);
+    --colour-background: #FFCE32;
+    --colour-primary: #ffffff;
+    --colour-secondary: #1D63FF;
+    --colour-tertiary: #ff9925;
+    --colour-shadow: #35353598;
+    --colour-line: #121722;
+    --colour-link: #1D63FF;
+
+    /* font-family */
+    --font-sourcesans: "Source Sans Pro";
+    --font-amiko: "Amiko";
+    --font-offside: "Offside";
+}
+
+.cvSection {
+    position: absolute;
+    right: 0;
+    background-color: var(--colour-background);
+    min-height: 100%;
+    z-index: 1;
+    padding: 20px;
+    padding-left: 40px;
+}
+
+.centerCircle {
+    border: solid 1px var(--colour-line);
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 9px;
+    border-radius: 50%;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: var(--colour-primary);
+}
+
+@media (min-width: 1100px) {
+    .cvSection {
+        width: 94%;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1000px) {
+    .cvSection {
+        width: 92.5%;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1000px) {
+    .cvSection {
+        width: 91%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .cvSection {
+        width: 88%;
+    }
+}
+
+@media (max-width: 599px) {
+    .cvSection {
+        width: 100%;
+    }
+}
