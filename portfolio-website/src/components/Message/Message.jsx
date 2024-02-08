@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Message.module.css";
 import MessageData from "../../data/mssge.data"
 import moment from "moment";
@@ -7,6 +7,10 @@ import { SocialIcon } from "react-social-icons";
 import "react-social-icons/linkedin";
 import "react-social-icons/email";
 import "react-social-icons/x";
+
+import Meta from "../Elements/Meta";
+import Heading from "../Elements/Heading";
+import Navigate from "../Elements/Navigate";
 
 const Message = () => {
   const [day, setDay] = useState(moment().format("LL"));
@@ -111,10 +115,14 @@ const [reactionValues, setReactionValues] = useState(null);
 
   return (
     <section className={styles.cvSection}>
-      <h2 className={`${styles.cvSecondaryHeading} ${styles.cvJobsHeading}`}>
-        Connect With Me.
-      </h2>
-      <br />
+      <Meta
+        title={"Connect with Me | Message"}
+        description={"Contact Koustav Das"}
+        keyword={"koustav, das, dataanalysis, koustavdas, developer, skills, expertise"}
+        link={"message"}
+      />
+      <Heading title={"Connect with Me"} />
+      <Navigate previous={"competitions"} next={""} />
       <h3 className={styles.cvTimelineHeading}>
         <span className={styles.cvTimelineHeadingTitle}>Message on</span>
       </h3>

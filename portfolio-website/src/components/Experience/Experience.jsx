@@ -1,18 +1,29 @@
 import React from 'react';
 import styles from "./Experience.module.css";
 
+import Meta from "../Elements/Meta";
+import Heading from "../Elements/Heading";
+import Navigate from "../Elements/Navigate";
+
 const Experience = () => {
+    const navigateTab = (char) => {
+      localStorage.setItem("TAB", char);
+    };
   return (
     <section className={styles.cvSection}>
+      <Meta
+        title={"Experience"}
+        description={"Check Koustav's Experience over the years."}
+        keyword={"koustav, das, dataanalysis, koustavdas, developer"}
+        link={"experience"}
+      />
       <main className={styles.cvPage}>
         <div className={styles.cvGrid}>
           <div className={styles.cvGridColumn}>
             <div className={styles.cvJobs}>
-              <h2
-                className={`${styles.cvSecondaryHeading} ${styles.cvJobsHeading}`}
-              >
-                Work Experience.
-              </h2>
+              <Heading
+                title={"Work Experience"}
+              />
               <section className={`${styles.cvTimeline} ${styles.cvJob}`}>
                 <h3 className={styles.cvTimelineHeading}>
                   <span className={styles.cvTimelineHeadingTitle}>
@@ -43,6 +54,7 @@ const Experience = () => {
           </div>
         </div>
       </main>
+      <Navigate previous={"HOME"} next={"ACTIVITIES"} />
     </section>
   );
 }

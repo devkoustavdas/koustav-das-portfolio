@@ -1,14 +1,33 @@
-import React from 'react';
 import styles from "./Skills.module.css";
 import style from "./Skills.module.scss";
+import globalstyle from "../Panel.module.css";
+import Typewriter from "typewriter-effect";
+
+import Meta from "../Elements/Meta";
+import Heading from "../Elements/Heading";
+import Navigate from "../Elements/Navigate";
 
 const Skills = () => {
   return (
     <section className={styles.cvSection}>
-      <h2 className={`${styles.cvSecondaryHeading} ${styles.cvJobsHeading}`}>
-        Skills.
-      </h2>
-      <br />
+      <Meta
+        title={"Skills and Expertise"}
+        description={"Check Koustav's Skills and Expertise over the years."}
+        keyword={"koustav, das, dataanalysis, koustavdas, developer, skills, expertise"}
+        link={"skills"}
+      />
+      <Heading title={"Skills and Expertise"} />
+      <div className={globalstyle.pageSubtitle}>
+        These are some of my
+        <Typewriter
+          options={{
+            strings: ["Skills.", "Expertise."],
+            autoStart: true,
+            loop: true,
+          }}
+        />
+      </div>
+      <Navigate previous={"PROJECTS"} next={"COMPETITIONS"} />
       <ol className={style.wtree}>
         <li>
           <span
@@ -88,7 +107,7 @@ const Skills = () => {
                   <span
                     className={`${styles.animate__animated} ${styles.animate__backInRight} ${styles.animate__slower}`}
                   >
-                    Animation and Transitions
+                    Meeting and Presentation handling
                   </span>
                 </li>
                 <li>

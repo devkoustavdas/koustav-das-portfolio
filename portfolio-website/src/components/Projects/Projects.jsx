@@ -1,24 +1,25 @@
-import React from "react";
 import styles from "./Projects.module.css";
 import globalstyle from "../Panel.module.css";
-import "react-social-icons/behance";
-import "react-social-icons/leetcode";
-import "react-social-icons/medium";
-import "react-social-icons/github";
 import Typewriter from "typewriter-effect";
+
+import Meta from "../Elements/Meta";
+import Heading from "../Elements/Heading";
+import Navigate from "../Elements/Navigate";
 
 const Projects = () => {
   return (
     <section className={styles.cvSection}>
+      <Meta
+        title={"Projects"}
+        description={"Check Koustav's Projects over the years."}
+        keyword={"koustav, das, dataanalysis, koustavdas, developer, Projects"}
+        link={"projects"}
+      />
       <main className={styles.cvPage}>
         <div className={styles.cvGrid}>
           <div className={styles.cvGridColumn}>
             <div className={styles.cvJobs}>
-              <h2
-                className={`${styles.cvSecondaryHeading} ${styles.cvJobsHeading}`}
-              >
-                Projects and Works.
-              </h2>
+              <Heading title={"Projects and Works"} />
               <div className={globalstyle.pageSubtitle}>
                 These are some of my
                 <Typewriter
@@ -84,7 +85,13 @@ const Projects = () => {
                 <h3 className={styles.cvTimelineHeading}>
                   <span className={styles.cvTimelineHeadingTitle}>Glider</span>
                   <span className={styles.cvTimelineHeadingLocation}>
-                    Aerospace Club Jadavpur University
+                    <a
+                      href="https://www.linkedin.com/company/aerospace-club-ju/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Stratosphere, Jadavpur University Aerospace Club
+                    </a>
                   </span>
                   <small className={styles.cvTimelineHeadingDuration}>
                     June, 2023 - September, 2023
@@ -92,7 +99,40 @@ const Projects = () => {
                 </h3>
                 <ul className={styles.cvTimelineDetails}>
                   <li className={styles.cvJobTimelineItem}>
-                    Coded using Javascript, HTML, CSS
+                    Custom design in AutoCAD, SolidWorks
+                  </li>
+                  <li className={styles.cvJobTimelineItem}>
+                    Made with full team efforts
+                  </li>
+                </ul>
+              </section>
+              <section className={`${styles.cvTimeline} ${styles.cvJob}`}>
+                <h3 className={styles.cvTimelineHeading}>
+                  <span className={styles.cvTimelineHeadingTitle}>
+                    RC Plane
+                  </span>
+                  <span className={styles.cvTimelineHeadingLocation}>
+                    <a
+                      href="https://kadss.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Team KADSS
+                    </a>
+                  </span>
+                  <small className={styles.cvTimelineHeadingDuration}>
+                    September, 2023 - September, 2023
+                  </small>
+                </h3>
+                <ul className={styles.cvTimelineDetails}>
+                  <li className={styles.cvJobTimelineItem}>
+                    Custom design in AutoCAD, SolidWorks
+                  </li>
+                  <li className={styles.cvJobTimelineItem}>
+                    Developed in minimal cost
+                  </li>
+                  <li className={styles.cvJobTimelineItem}>
+                    Made with full team efforts
                   </li>
                 </ul>
               </section>
@@ -100,6 +140,7 @@ const Projects = () => {
           </div>
         </div>
       </main>
+      <Navigate previous={"EDUCATION"} next={"SKILLS"} />
     </section>
   );
 };

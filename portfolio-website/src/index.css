@@ -45,12 +45,13 @@ a:hover {
 }
 
 body {
-  scroll-behavior: smooth;
   scroll-margin-top: 20px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 button {
   border-radius: 6px;
   padding: 0.5em 1em;
@@ -87,7 +88,6 @@ button:focus,
 button:focus-visible {
   outline: none;
 }
-
 
 
 

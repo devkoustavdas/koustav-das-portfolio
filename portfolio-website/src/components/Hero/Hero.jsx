@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Hero.module.css";
 import { getUrl } from "../../utils";
+import { Link } from "react-router-dom";
+
+import Meta from "../Elements/Meta";
+import Navigate from "../Elements/Navigate";
 
 const Hero = () => {
+
+  const navigateTab = (char) => {
+    localStorage.setItem("TAB", char);
+  }
 
   const [audio, setaudio] = useState(false);
   const handleAudio = () => {
@@ -17,6 +25,13 @@ const Hero = () => {
 
   return (
     <section className={styles.heroSection}>
+      <Meta
+        title={"Koustav Das"}
+        description={"Contact Koustav Das"}
+        keyword={"koustav, das, dataanalysis, koustavdas, developer, skills, expertise"}
+        link={""}
+      />
+      <Navigate previous={"MESSAGE"} next={"EXPERIENCE"} />
       <div className={styles.heroTitle}>
         <h1
           className={`${styles.heroTitleName} ${styles.animate__animated} ${styles.animate__backInLeft} ${styles.animate__1}`}
@@ -64,7 +79,11 @@ const Hero = () => {
         </p>
       </div>
       <div className={styles.topblur} />
-      <img className={styles.heroImage} src={getUrl("koustav-hero-image.png")} alt="Koustav Das Image" />
+      <img
+        className={styles.heroImage}
+        src={getUrl("koustav-hero-image.png")}
+        alt="Koustav Das Image"
+      />
     </section>
   );
 }

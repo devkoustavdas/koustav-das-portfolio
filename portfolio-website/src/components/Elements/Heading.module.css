@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-display: auto;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/bangers@latest/latin-400-normal.woff) format('woff'), url(https://cdn.jsdelivr.net/fontsource/fonts/bangers@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/bangers@latest/latin-400-normal.ttf) format('truetype');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+header {
+    margin: 20px 0px;
+}
+
+.cvPageTitle {
+  position: relative;
+  margin: 0.2em 1em 0.1em 0.25em;
+  text-transform: uppercase;
+  font-family: 'Bangers', sans-serif !important;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 0.1ch;
+  color: var(--colour-secondary);
+  -webkit-user-select: none;
+  user-select: none;
+  width: max-content;
+  display: inline-block;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: var(--colour-secondary);
+    margin: 5px 0px;
+    width: 9ch;
+}
+
+.titleSpeaker{
+  background-color: transparent;
+  border: none;
+  transform: scale(2);
+  min-width: 10px;
+  max-width: 32px;
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  box-shadow: none;
+  min-width: none;
+}
+
+.titleSpeaker:hover{
+  background-color: transparent;
+  border: none;
+}
+
+.titleSpeaker:active{
+  background-color: transparent;
+  border: none;
+}

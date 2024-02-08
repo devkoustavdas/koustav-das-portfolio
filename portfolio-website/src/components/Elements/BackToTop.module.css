@@ -1,0 +1,18 @@
+.BackToTopBtn {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    z-index: 100;
+    border-radius: 50%;
+    padding: 9px 11px;
+    background-color: var(--colour-primary);
+    color: var(--colour-secondary);
+    border: solid 2px var(--colour-primary);
+    transition-duration: 200ms;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.BackToTopBtn:hover{
+    border: solid 2px var(--colour-secondary);
+    box-shadow: none;
+}

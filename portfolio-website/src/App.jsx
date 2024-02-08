@@ -16,7 +16,7 @@ import Projects from "./components/Projects/Projects";
 import Message from "./components/Message/Message";
 import Skills from "./components/Skills/Skills";
 import Competitions from "./components/Competitions/Competitions";
-
+import BackToTop from "./components/Elements/BackToTop";
 function App() {
   return (
     <Router>
@@ -32,6 +32,7 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/competitions" element={<Competitions />} />
         </Routes>
+        <BackToTop />
       </div>
     </Router>
   );

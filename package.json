@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@fontsource/offside": "^5.0.16",
+    "@fontsource/staatliches": "^5.0.18",
     "animate.css": "^4.1.1",
     "firebase": "^10.5.0",
     "moment": "^2.29.4",

@@ -2,8 +2,17 @@ import React from "react";
 import styles from "./Education.module.css";
 import { Gallery } from "react-grid-gallery";
 import { getUrl } from "../../utils";
+import { Link } from "react-router-dom";
+
+import Meta from "../Elements/Meta";
+import Heading from "../Elements/Heading";
+import Navigate from "../Elements/Navigate";
 
 const Education = () => {
+  const navigateTab = (char) => {
+        localStorage.setItem("TAB", char);
+  };
+  
   const images = [
     {
       src: getUrl("class12-award.jpg"),
@@ -38,15 +47,19 @@ const Education = () => {
   ];
   return (
     <section className={styles.cvSection}>
+      <Meta
+        title={"Education"}
+        description={"Check Koustav's Education over the years."}
+        keyword={"koustav, das, dataanalysis, koustavdas, developer"}
+        link={"education"}
+      />
+
       <main className={styles.cvPage}>
         <div className={styles.cvGrid}>
           <div className={styles.cvGridColumn}>
             <div className={styles.cvJobs}>
-              <h2
-                className={`${styles.cvSecondaryHeading} ${styles.cvJobsHeading}`}
-              >
-                Education.
-              </h2>
+              <Heading title={"Education"} />
+
               <section className={`${styles.cvTimeline} ${styles.cvJob}`}>
                 <h3 className={styles.cvTimelineHeading}>
                   <span className={styles.cvTimelineHeadingTitle}>
@@ -65,7 +78,10 @@ const Education = () => {
                   <li className={styles.cvJobTimelineItem}>Mechanics</li>
                   <li className={styles.cvJobTimelineItem}>Thermodynamics</li>
                   <li className={styles.cvJobTimelineItem}>
-                    Computer Aided Design
+                    Computer Aided Design using <strong>AutoCAD</strong>
+                  </li>
+                  <li className={styles.cvJobTimelineItem}>
+                    Numerical Analysis in <strong>C</strong>
                   </li>
                   <li className={styles.cvJobTimelineItem}>Mathematics</li>
                 </ul>
@@ -122,7 +138,9 @@ const Education = () => {
           </div>
         </div>
       </main>
+      <Navigate previous={"ACTIVITIES"} next={"PROJECTS"} />
       <Gallery images={images} />
+      <div className={styles.space}></div>
     </section>
   );
 };

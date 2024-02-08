@@ -12,7 +12,7 @@
   padding: 10px;
 }
 
-.cvSecondaryHeading {
+/* .cvSecondaryHeading {
   position: relative;
   margin: 1em 0 0;
   text-transform: uppercase;
@@ -27,7 +27,7 @@
 .cvSecondaryHeading::first-letter {
   font-size: 44px;
   font-family: var(--font-offside);
-}
+} */
 
 .cvGrid {
   display: table;
@@ -127,7 +127,7 @@
   margin-right: 10px;
 }
 
-.iconspeaker{
+/* .iconspeaker{
   background-color: transparent;
   border: none;
   transform: scale(2);
@@ -150,11 +150,11 @@
   color: var(--colour-secondary);
   background-color: transparent;
   border: none;
-}
+} */
 
-.speak {
+/* .speak {
   display: none;
-}
+} */
 
 .pageSubtitle {
   display: flex;

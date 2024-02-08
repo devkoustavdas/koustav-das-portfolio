@@ -1,62 +1,70 @@
-import { useState } from "react";
 import styles from "./Activities.module.css";
 import {getUrl} from "../../utils";
 import globalstyle from "../Panel.module.css";
 import Typewriter from "typewriter-effect";
+import { Gallery } from "react-grid-gallery";
+
+import Meta from "../Elements/Meta";
+import Heading from "../Elements/Heading";
+import Navigate from "../Elements/Navigate";
 
 const Activities = () => {
-const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const toggleAudio = () => {
-    const audio = document.getElementById("audioElement"); // Get the audio element by its ID
-    if (audio) {
-      if (isAudioPlaying) {
-        audio.pause();
-      } else {
-        audio.play();
-      }
-      setIsAudioPlaying(!isAudioPlaying); // Toggle the state
-    }
-  };
+
+    const images = [
+      {
+        src: getUrl("class12-award.jpg"),
+        width: 600,
+        height: 800,
+        isSelected: false,
+        tags: [{ value: "Class 12", title: "Class" }],
+        caption:
+          "Rewarded from school (Bethany Mission School, Raiganj) for getting 90%+ marks in 12th.",
+        alt: "Rewarded from school (Bethany Mission School, Raiganj) for getting 90%+ marks in 12th.",
+      },
+      {
+        src: getUrl("newsclass10.jpg"),
+        width: 600,
+        height: 700,
+        isSelected: false,
+        tags: [{ value: "Class 10 News", title: "Class" }],
+        caption:
+          "Rewarded from school (Bethany Mission School, Raiganj) for getting 90%+ marks in 12th.",
+        alt: "Rewarded from school (Bethany Mission School, Raiganj) for getting 90%+ marks in 12th.",
+      },
+      {
+        src: getUrl("reward-class10.jpg"),
+        width: 1000,
+        height: 600,
+        isSelected: false,
+        tags: [{ value: "Class 10 Award", title: "Class" }],
+        caption:
+          "Rewarded for being the highest ICSE scorer of Uttar Dinajpur District (West Bengal)",
+        alt: "Rewarded for being the highest ICSE scorer of Uttar Dinajpur District (West Bengal)",
+      },
+    ];
+
 
 
   return (
     <section className={styles.cvSection}>
+      <Meta
+        title={"Activities"}
+        description={"Check Koustav's Activities over the years."}
+        keyword={"koustav, das, dataanalysis, koustavdas, developer"}
+        link={"activities"}
+      />
       <main className={styles.cvPage}>
         <div className={styles.cvGrid}>
           <div className={styles.cvGridColumn}>
             <div className={styles.cvJobs}>
-              <h2
-                className={`${styles.cvSecondaryHeading} ${styles.cvJobsHeading}`}
-              >
-                Activities.
-                <button
-                  type="button"
-                  className={styles.iconspeaker}
-                  onClick={toggleAudio}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    className="bi bi-volume-up-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z" />
-                    <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z" />
-                    <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z" />
-                  </svg>
-                </button>
-              </h2>
-              <audio id="audioElement" className={styles.speak} controls>
-                <source src={getUrl("activities-cv.m4a")} type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
+            
+              <Heading title={"Activities"}/>
+
               <div className={globalstyle.pageSubtitle}>
-                These are some of my
+                These are some 
                 <Typewriter
                   options={{
-                    strings: ["Activities I did during my College time."],
+                    strings: ["Activities I did during my College time.", "Events thats I worked in to organise.", "Clubs I worked with in College.", "Positions I held in those Clubs"],
                     autoStart: true,
                     loop: true,
                   }}
@@ -68,7 +76,13 @@ const [isAudioPlaying, setIsAudioPlaying] = useState(false);
                     Organising Team Member
                   </span>
                   <span className={styles.cvTimelineHeadingLocation}>
-                    Stratosphere, Jadavpur University Aerospace Club
+                    <a
+                      href="https://www.linkedin.com/company/aerospace-club-ju/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Stratosphere, Jadavpur University Aerospace Club
+                    </a>
                   </span>
                   <small className={styles.cvTimelineHeadingDuration}>
                     May, 2023 - Present
@@ -80,8 +94,13 @@ const [isAudioPlaying, setIsAudioPlaying] = useState(false);
                     the TechFest of JU, and Orientations of the club.
                   </li>
                   <li className={styles.cvJobTimelineItem}>
+                    Made Glider with the team (Was in-charge of the electronics
+                    part of the glider).
+                  </li>
+                  <li className={styles.cvJobTimelineItem}>
                     Creating content and posts for the club&apos;s social media
-                    platforms.
+                    platforms on various occasions using{" "}
+                    <strong>Canva, Figma</strong>.
                   </li>
                   <li className={styles.cvJobTimelineItem}>
                     Growing the club&apos;s member, audience and followers.
@@ -94,7 +113,13 @@ const [isAudioPlaying, setIsAudioPlaying] = useState(false);
                     Coordinator
                   </span>
                   <span className={styles.cvTimelineHeadingLocation}>
-                    E-cell Jadavpur University
+                    <a
+                      href="https://www.linkedin.com/school/juecell/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      E-cell Jadavpur University
+                    </a>
                   </span>
                   <small className={styles.cvTimelineHeadingDuration}>
                     May, 2023 - Present
@@ -102,11 +127,23 @@ const [isAudioPlaying, setIsAudioPlaying] = useState(false);
                 </h3>
                 <ul className={styles.cvTimelineDetails}>
                   <li className={styles.cvJobTimelineItem}>
-                    Conducted orientations and events
+                    Conducted events like <strong>E-Weekend 2023</strong>,{" "}
+                    <strong>Hult Prize OnCampus JU 2024</strong>, etc.
                   </li>
                   <li className={styles.cvJobTimelineItem}>
-                    Creating content and posts for the club&apos;s social media
-                    platforms.
+                    Conducted orientations and sessions like Eweekend{" "}
+                    <strong>Intro To Pitching</strong>,{" "}
+                    <strong>Hult Prize Orientation</strong>, Departmental
+                    Campaigns.
+                  </li>
+
+                  <li className={styles.cvJobTimelineItem}>
+                    Created content and posts for the club&apos;s social media
+                    platforms and website on various occasions using{" "}
+                    <strong>Canva, Figma</strong>.
+                  </li>
+                  <li className={styles.cvJobTimelineItem}>
+                    Growing the club&apos;s member, audience and followers.
                   </li>
                 </ul>
               </section>
@@ -114,6 +151,9 @@ const [isAudioPlaying, setIsAudioPlaying] = useState(false);
           </div>
         </div>
       </main>
+      <Navigate previous={"EXPERIENCE"} next={"EDUCATION"} />
+      <Gallery images={images} />
+      <div className={styles.space}></div>
     </section>
   );
 };

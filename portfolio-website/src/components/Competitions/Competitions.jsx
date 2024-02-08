@@ -1,18 +1,36 @@
-import React from 'react';
 import styles from "./Competitions.module.css";
+import globalstyle from "../Panel.module.css";
+import Typewriter from "typewriter-effect";
+
+import Meta from "../Elements/Meta";
+import Heading from "../Elements/Heading";
+import Navigate from "../Elements/Navigate";
 
 const Competitions = () => {
   return (
     <section className={styles.cvSection}>
+      <Meta
+        title={"Competition and Awards"}
+        description={"Check Koustav's Competition and Awards over the years."}
+        keyword={"koustav, das, dataanalysis, koustavdas, developer, competition, awards"}
+        link={"competition"}
+      />
+      <Navigate previous={"SKILLS"} next={"MESSAGE"} />
       <main className={styles.cvPage}>
         <div className={styles.cvGrid}>
           <div className={styles.cvGridColumn}>
             <div className={styles.cvJobs}>
-              <h2
-                className={`${styles.cvSecondaryHeading} ${styles.cvJobsHeading}`}
-              >
-                Competitions and Awards.
-              </h2>
+              <Heading title={"Competition and Awards"} />
+              <div className={globalstyle.pageSubtitle}>
+                These are some of the
+                <Typewriter
+                  options={{
+                    strings: ["Competitions I participated.", "Awards I won."],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </div>
               <section className={`${styles.cvTimeline} ${styles.cvJob}`}>
                 <h3 className={styles.cvTimelineHeading}>
                   <span className={styles.cvTimelineHeadingTitle}>

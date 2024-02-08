@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
@@ -6,7 +6,18 @@ const Navbar = () => {
   const [tab, setTab] = useState("HOME");
   const currentTab = (c) => {
     setTab(c);
+    localStorage.setItem("TAB", c);
   }
+
+  const tabChange = () => {
+    setTab(localStorage.getItem("TAB"));
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(tabChange, 500);
+    return () => clearInterval(intervalId);
+  }, []);
+
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNav = () => {
     setIsNavOpen((prevMode) => !prevMode);
@@ -15,9 +26,8 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div
-        className={`${styles.hamburgerMenu} ${
-          isNavOpen ? styles.blue : styles.black
-        }`}
+        className={`${styles.hamburgerMenu} ${isNavOpen ? styles.blue : styles.black
+          }`}
         onClick={toggleNav}
       >
         <svg
@@ -35,9 +45,8 @@ const Navbar = () => {
         </svg>
       </div>
       <div
-        className={`${styles.navmenu} ${
-          isNavOpen ? styles.navOpened : styles.navNOTOpened
-        }`}
+        className={`${styles.navmenu} ${isNavOpen ? styles.navOpened : styles.navNOTOpened
+          }`}
       >
         <div className={styles.menuItems}>
           <Link to="/" onClick={() => currentTab("HOME")}>
